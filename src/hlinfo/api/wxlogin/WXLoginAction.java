@@ -31,11 +31,13 @@ public class WXLoginAction extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String path = request.getContextPath();int port = request.getServerPort();
+		String path = request.getContextPath();
+		int port = request.getServerPort();
 		String basePath = (port==80 || port==443)?request.getScheme()+"://"+request.getServerName()+path+"/":request.getScheme()+"://"+request.getServerName()+":"+port+path+"/";
 		WXLoginConfig wx=new WXLoginConfig();
 		String state="";//state会原样返回
 		String redirect_uri=basePath+"wxloginback.action";//回调地址
+		System.out.println(redirect_uri + "***********************************8888");
 		redirect_uri=URLEncoder.encode(redirect_uri,"utf-8");
 		String wxurl="https://open.weixin.qq.com/connect/oauth2/authorize?appid="+wx.appid+"&redirect_uri="+redirect_uri+"&response_type=code&scope=snsapi_userinfo&state="+state+"#wechat_clientstate";
 		

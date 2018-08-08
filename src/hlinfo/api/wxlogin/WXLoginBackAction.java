@@ -43,6 +43,7 @@ public class WXLoginBackAction extends HttpServlet {
 		HttpRequest http = new HttpRequest();
 		String rstk=http.httpsget(url);
 		JSONObject jsontk= JSON.parseObject(rstk);
+		System.out.println(jsontk);
 		//判断是否获取access_token成功
 		if(jsontk.containsKey("access_token")) {
 			String access_token=jsontk.getString("access_token");

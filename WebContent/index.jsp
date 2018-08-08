@@ -8,7 +8,7 @@ String basePath = (port==80 || port==443)?request.getScheme()+"://"+request.getS
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <meta name="Author" content="呐喊">
+  <meta name="Author" content="stormfa">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
   <title>Document</title>
